@@ -1,0 +1,24 @@
+----- Carto Link
+
+https://mokonski.carto.com/builder/5e33986e-39ce-4a4a-b270-62c0fd1f2d74/embed
+
+
+----- NASS Queries
+
+URL=https://quickstats.nass.usda.gov/results/BFAEB934-5D73-3008-92FD-76C8A0A53ED7
+
+corn
+URL=https://quickstats.nass.usda.gov/results/10434D46-E765-32BA-A014-CD22AABEDD43
+
+#corn acres harvested
+[DEFAULT]
+URL=https://quickstats.nass.usda.gov/results/67CB35F2-0054-3A16-902B-113B2884D21A
+[InternetShortcut]
+URL=https://quickstats.nass.usda.gov/results/67CB35F2-0054-3A16-902B-113B2884D21A
+
+#soybeans acres harvested
+[DEFAULT]
+URL=https://quickstats.nass.usda.gov/results/77362CA2-CAB2-353F-97DD-5730D1B70BCC
+[InternetShortcut]
+URL=https://quickstats.nass.usda.gov/results/77362CA2-CAB2-353F-97DD-5730D1B70BCC
+
