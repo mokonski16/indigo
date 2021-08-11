@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+
+	<!--
+	This meta tag will instruct mobile browsers to scale the page to fit the screen and disable further scaling of the 
+	page with pinch gestures. We recommend it for mobile sites using Web Author maps.
+	-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+	<!-- 
+	The following style sheets must be included in your page to properly style the viewer.
+	You may wish to further style the viewer with CSS, read the documentation in avenza.css for tips on how.
+	-->
+	<link rel="stylesheet" href="index_data/avenza.css" type="text/css" />
+	<link rel="stylesheet" href="index_data/avenza-theme.css" type="text/css" />
+	
+	<style>
+		/*
+		The viewer will be embedded inside of a div element in your page (the "container div").  The map view will fill 
+		the container div.
+		*/  
+		
+		/* 
+		For mobile specific sites we recommend setting the width and height of the container div to 100%, then using 
+		max-width and max-height to limit the width to the size of the map.  Like this:
+		*/
+		#map_container {
+			max-width: 1600px; 
+			width: 100%;
+			max-height: 1236px;
+			height: 100%;
+		}
+		
+		/*
+		For standard websites we recommend explicitly setting a width and height of the container div. Like this:
+		
+		#map_container {
+			width: 1600px; 
+			height: 1236px;
+		}		
+		*/
+		
+		/*
+		The following styles do not need to be copied to your web site.
+		*/
+		#map_container { background: white; }
+		body { background: silver; height: 100%; padding:0; margin:0; overflow: hidden }
+		html { height: 100% }
+
+	</style>
+	
+	<!-- 
+	The follow script tags must be included in your page.
+	-->
+	<script src="index_data/jquery-1.7.1.min.js"></script>
+	<script src="index_data/openseadragon-min.js"></script>
+	<script src="index_data/avenza-viewer.js"></script>
+	<script>
+		var avenzaViewer;
+		$(function () {
+			
+			AVENZA.initialize();
+			avenzaViewer = AVENZA.embedViewer({
+				id: 'map_container',
+				descButtonId: 'map_descButton',
+				descPanelId: 'map_descPanel',
+				legendButtonId: 'map_legendButton',
+				legendPanelId: 'map_legendPanel',
+				legendImageId: 'map_legendImage',
+				prefixUrl: 'index_data/',
+				enableZoomSelection: true,
+				searchBox: AVENZA.QUAD.TOP_RIGHT,
+				revealSearchResults: true,
+				layerList: AVENZA.QUAD.BOTTOM_LEFT,
+				useFillHighlight: true,
+				minZoomImageRatio: 0.9,
+				showMapLegend: true
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<div id="map_container">
+		<button id="map_descButton" class="desc-button">
+		</button>
+
+		<div id="map_descPanel" class="desc-panel">
+		</div>
+
+		<button id="map_legendButton" class="legend-button">
+		</button>
+
+		<div id="map_legendPanel" class="legend-panel">
+		</div>
+	
+		<div style="display:none">
+			<!-- 
+			The message below will appear instead of the map if a user connects with a browser that does not support 
+			enough HTML5 for the map viewer to function.  You may wish to customize the message for your site.
+			-->
+			A web browser that supports HTML5 is required in order to view this content.  If you are seeing this message
+			then your current web browser does not.  Please upgrade.
+		</div>
+	</div>
+</body>
+</html>

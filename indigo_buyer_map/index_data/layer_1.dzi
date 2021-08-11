@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Image TileSize="512" Overlap="0" Format="png" xmlns="http://schemas.microsoft.com/deepzoom/2009">
+<Size Width="4896.01" Height="3168"/>
+<DisplayRects>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="1475" Y="604" Width="18" Height="18"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="1319" Y="1223" Width="18" Height="17"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="4203" Y="780" Width="17" Height="17"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="1325" Y="1019" Width="17" Height="18"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="1574" Y="674" Width="17" Height="18"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="1015" Y="604" Width="18" Height="18"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="4349" Y="965" Width="18" Height="17"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="1679" Y="789" Width="18" Height="18"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="1290" Y="1038" Width="17" Height="17"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="651" Y="615" Width="18" Height="17"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="2290" Y="2788" Width="136" Height="96"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="478" Y="1183" Width="75" Height="62"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="753" Y="459" Width="243" Height="209"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="1330" Y="1111" Width="46" Height="46"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="474" Y="1253" Width="140" Height="227"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="4215" Y="1093" Width="122" Height="104"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="1503" Y="1480" Width="132" Height="103"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="970" Y="800" Width="304" Height="338"/>
+</DisplayRect>
+<DisplayRect MinLevel="7" MaxLevel="13">
+<Rect X="1756" Y="508" Width="2445" Height="2237"/>
+</DisplayRect>
+</DisplayRects>
+</Image>

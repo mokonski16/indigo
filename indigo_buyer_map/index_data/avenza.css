@@ -1,0 +1,666 @@
+/*******************************************************************************
+** General styling options for the map viewer
+*******************************************************************************/
+
+/* 
+avz-viewer is applied to the main viewer element. Styles set here are 
+inherited by all other elements. 
+*/
+.avz-viewer {
+	color: #222222; /* sets the foreground color for all viewer elements */
+}
+
+.avz-viewer canvas, div, form {
+	/* remove any default browser highlighing effects */
+	outline: none; 
+	/* disables tap highlighting in the built in Android browser */
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+}
+
+/* avz-dropshadow is applied to all buttons and callouts. */
+.avz-dropshadow {
+	-moz-box-shadow: 0px 1px 4px #777777;
+	-webkit-box-shadow: 0px 1px 4px #777777;
+	box-shadow: 0px 1px 4px #777777;
+}
+
+/* The avz-border class is applied to all buttons and callouts.*/
+.avz-border {
+	border: 1px solid #444444;
+	background: #FEFEFE;
+}
+
+.avz-zoomMarqueeRect {
+    border: 1px dotted #000000;
+    position: absolute;
+}
+
+/*******************************************************************************
+** Styling options for viewer widgets
+*******************************************************************************/
+
+/* avz-icon is applied to the embedded svg images used in buttons. */
+.avz-icon {
+	fill: #222222;
+	fill-opacity: 1.0;
+	width: 100%;
+	height: 100%;
+}
+
+/* avz-widget is applied to all widgets in the viewer. */
+.avz-widget {
+	vertical-align: middle;
+
+	/* this will prevent selecting viewer widgets for copy and paste */
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;	
+}
+
+/* 
+avz-widget-touch gets applied briefly to widgets after they are actived (clicked or tapped) to provide some visual
+feedback.
+*/
+.avz-widget-activate {
+	background: #E5E5E5;
+}
+
+/* avz-button is applied to all buttons. Buttons are DIV elements. */
+.avz-button {
+	margin: 0;
+}
+
+.avz-button:hover {
+}
+
+/* 
+avz-toolbar-button is applied to buttons that appear along the edge of the 
+viewer (e.g. the zoom in and zoom out buttons) 
+*/
+.avz-toolbar-button {
+	width: 32px;
+	height: 32px;
+	
+	/*
+		NOTE: To have a background color applied behind the navigation buttons tool bar, 
+		remove the visibility attribute from here & assign the desired color to
+		background attribute.
+	*/
+	visibility: hidden;
+	background: #E5E5E5;
+}
+
+.avz-toolbar-button:hover {
+}
+
+/* 
+avz-button-notouch is only applied on non-touch devices.  Hover behaviour is 
+inconsistent on touch devices so we only apply it if not
+*/
+.avz-toolbar-button-notouch:hover {
+	background: #E5E5E5;
+}
+
+/* 
+avz-layer-list is applied to the layer list that appears after the layer list 
+button is pressed.  The layer list is an HTML UL element. 
+*/
+.avz-layer-list {	
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.avz-layer-list li {
+	display: block;
+	white-space: nowrap;
+    height: 32px;
+    line-height: 32px;
+}
+
+.avz-layer-list li img {
+	vertical-align: middle;
+}
+
+.avz-layer-list li:hover {
+}
+
+/*
+avz-layer-list-notouch is only applied on non-touch devices.  Hover behaviour
+is inconsistent on touch devices, so we only apply it if not.
+*/
+.avz-layer-list-notouch li:hover {
+	background: #E5E5E5;
+	cursor: default;	
+}
+
+/* 
+avz-search-box is applied to the search box widget.  The search box is an HTML
+DIV element containing an HTML INPUT text box and a clear button.
+*/
+.avz-search-box {
+	padding: 2px;
+}
+
+.avz-search-box-input {
+	font-size: small;
+	border: none;
+	outline: none;
+}
+
+.avz-search-box-clear-button {
+	width: 1em;
+	height: 1em;
+	margin: .3em;
+}
+
+.avz-search-box-clear-button:hover {
+	background: none;
+	cursor: default;	
+}
+
+
+/*******************************************************************************
+** Map feature highlight styling options
+*******************************************************************************/
+
+/* 
+avz-feature is applied to all features with callouts in the map view.  Features
+are SVG PATH and POLYLINE elements.
+*/
+.avz-feature {
+	stroke: #FFFFFF;
+	fill: #FFFFFF;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+
+	/* 
+	The stroke width is included in the hit testing area for an SVG element. We 
+	use a wide stroke width to keep line features and small features selectable.
+	*/
+	stroke-width: 8; 
+	
+	/* 
+	Not all browsers will fire mouseover events for completely transparent SVG 
+	elements. Setting the opacity > 0 but very light stops the element from 
+	being drawn, but keeps the mouse events working.
+	*/
+	stroke-opacity: 0.001;
+	fill-opacity: 0.001;
+}
+
+/* 
+avz-feature-mouseover is applied to features as the mouse moves over them.
+*/
+.avz-feature-mouseover {
+	stroke: #009DFF;
+	stroke-opacity: 0.4;
+	cursor: pointer;	
+}
+
+/* 
+avz-feature-mouseover-fll is applied to features when fill highlight is desired on mouse over.
+*/
+.avz-feature-mouseover-fill {
+	fill: #009DFF;
+	fill-opacity: 0.4;
+}
+
+/* 
+avz-feature-selected is applied to features when they are clicked or tapped. 
+*/
+.avz-feature-selected {
+	stroke: #009DFF;
+	stroke-opacity: 0.4;
+	fill: #009DFF;
+	fill-opacity: 0.2;
+}
+
+/* 
+avz-feature-search-highlight is applied to features when they match a search 
+call.
+*/
+.avz-feature-search-highlight {
+	stroke: #009DFF;
+	stroke-opacity: 0.4;
+}
+
+
+/*******************************************************************************
+** Callout bubble styling options
+*******************************************************************************/
+
+/* 
+avz-callout-bubble is applied to all callouts (hover, click and fixed). Callouts
+are HTML DIV elements.
+*/
+.avz-callout-bubble {
+	position: relative;
+	overflow: visible;
+	padding: 7px;
+	border-radius: 5px;
+}
+
+.avz-click-callout-bubble {
+}
+
+/* 
+The hover callout is not created as a child of the map viewer element.  Styling
+options set on avz-viewer will not be inherited.
+*/
+.avz-hover-callout-bubble {
+	color: #222222;
+}
+
+.avz-fixed-callout-bubble {
+	position: absolute;
+	top: 50px
+	left: 5px;
+}
+
+.avz-button-close {	
+	float: right;
+	width: 1em;
+	height: 1em;
+	vertical-align: text-top;
+	padding-left:.7em;
+}
+
+.avz-button-close:hover {	
+	background: none;
+	cursor: default;	
+}
+
+.avz-webtag-title {
+	width: 100%;
+	display: inline;
+}
+
+.avz-webtag-title hr {
+	border: 0;
+	background-color: #444444;
+	color: #444444;
+	height: 1px;
+	margin-top: .3em;
+}
+
+.avz-webtag-image {
+}
+
+.avz-webtag-content {
+}
+
+
+/*******************************************************************************
+** Styling options for callout arrows
+*******************************************************************************/
+
+/*
+Arrows on the click are implemented as HTML DIV elements sized to appear 
+triangular.  Each position of the arrow is styled separately.
+*/
+.avz-click-callout-bubble.avz-bottom-left {
+	bottom: 20px;
+	left: -15px;
+}
+
+.avz-click-callout-bubble.avz-bottom-left:before {
+	content:"";
+	position:absolute;
+	bottom:-20px; /* value = - border-top-width - border-bottom-width */
+	left:15px; /* controls horizontal position */
+	border: 0;
+	border-right-width: 19px; /* vary these values to change the angle of the vertex */
+	border-top-width: 19px; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#777777 transparent; 
+    display:block; 
+    width:0;
+}
+
+.avz-click-callout-bubble.avz-bottom-left:after {
+	content:"";
+	position:absolute;
+	bottom:-18px; /* value = - border-top-width - border-bottom-width */
+	left:16px; /* controls horizontal position */
+	border: 0;
+	border-right-width: 22px; /* vary these values to change the angle of the vertex */
+	border-top-width: 22px; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#FEFEFE transparent; 
+    display:block; 
+    width:0;
+}
+
+.avz-click-callout-bubble.avz-bottom-right {
+	bottom: 20px;
+	right: -15px;
+}
+
+.avz-click-callout-bubble.avz-bottom-right:before {
+	content:"";
+	position:absolute;
+	bottom:-20px; /* value = - border-top-width - border-bottom-width */
+	right:15px; /* controls horizontal position */
+	border: 0;
+	border-left-width: 19px; /* vary these values to change the angle of the vertex */
+	border-top-width: 19px; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#777777 transparent; 
+    display:block; 
+    width:0;
+}
+
+.avz-click-callout-bubble.avz-bottom-right:after {
+	content:"";
+	position:absolute;
+	bottom:-18px; /* value = - border-top-width - border-bottom-width */
+	right:16px; /* controls horizontal position */
+	border: 0;
+	border-left-width: 22px; /* vary these values to change the angle of the vertex */
+	border-top-width: 22px; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#FEFEFE transparent; 
+    display:block; 
+    width:0;
+}
+
+.avz-click-callout-bubble.avz-top-right {
+	top: 20px;
+	right: -15px;
+}
+
+.avz-click-callout-bubble.avz-top-right:before {
+	content:"";
+	position:absolute;
+	top:-20px; /* value = - border-top-width - border-bottom-width */
+	right:15px; /* controls horizontal position */
+	border: 0;
+	border-left-width: 19px; /* vary these values to change the angle of the vertex */
+	border-bottom-width: 19px; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#777777 transparent; 
+    display:block; 
+    width:0;
+}
+
+.avz-click-callout-bubble.avz-top-right:after {
+	content:"";
+	position:absolute;
+	top:-18px; /* value = - border-top-width - border-bottom-width */
+	right:16px; /* controls horizontal position */
+	border: 0;
+	border-left-width: 22px; /* vary these values to change the angle of the vertex */
+	border-bottom-width: 22px; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#FEFEFE transparent; 
+    display:block; 
+    width:0;
+}
+
+.avz-click-callout-bubble.avz-top-left {
+	top: 20px;
+	left: -15px;
+}
+
+.avz-click-callout-bubble.avz-top-left:before {
+	content:"";
+	position:absolute;
+	top:-20px; /* value = - border-top-width - border-bottom-width */
+	left:15px; /* controls horizontal position */
+	border: 0;
+	border-right-width: 19px; /* vary these values to change the angle of the vertex */
+	border-bottom-width: 19px; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#777777 transparent; 
+    display:block; 
+    width:0;
+}
+
+.avz-click-callout-bubble.avz-top-left:after {
+	content:"";
+	position:absolute;
+	top:-18px; /* value = - border-top-width - border-bottom-width */
+	left:16px; /* controls horizontal position */
+	border: 0;
+	border-right-width: 22px; /* vary these values to change the angle of the vertex */
+	border-bottom-width: 22px; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#FEFEFE transparent; 
+    display:block; 
+    width:0;
+}
+
+/*******************************************************************************
+** Styling options for dialogs (warning messages and lightbox callouts)
+*******************************************************************************/
+
+/* 
+avz-dialog-background is applied to the HTML DIV that appears behind dialogs.
+*/
+.avz-dialog-background {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+/*******************************************************************************
+** Styling options for map description panel & button
+*******************************************************************************/
+		
+		/* Common menu description panel settings */
+		.desc-panel {
+			position: absolute;
+			z-index: 1; /* Stay on top */
+			
+			background-color: #c0c0c0;
+			overflow-x: hidden; /* Disable horizontal scroll */
+			transition: 0.3s; /* 0.3 second transition effect to slide in the desc-panel */
+			
+			border-width: 1px;
+			border-color: #808080;
+		}
+		
+		/* map description location settings for left side */
+		.desc-panel-left {
+			width: 30%; 
+			height: 100%;
+			border-right-style: solid ;
+		}
+		
+		/* map description location settings for top side */
+		.desc-panel-top {
+			height: 30%;
+			width: 100%;
+			border-bottom-style: solid;
+		}
+
+		/* map description location settings for right side */
+		.desc-panel-right {
+			width: 30%; 
+			height: 100%;
+			border-left-style: solid;
+		}
+		
+		/* map description location settings for bottom side */
+		.desc-panel-bottom {
+			height: 30%; 
+			width: 100%;
+			border-top-style: solid;
+		}
+		
+		/* margin for text contained in description panel */
+		.desc-panel *{
+			margin: 10px 5px 10px 5px;
+		}
+		
+		/* transition setting for the map container*/
+		#map_container{
+			transition: 0.3s;  
+		}
+		
+		/* Common settings for button to show-hide navigation bar */
+		button.desc-button {
+			position: absolute;
+			z-index: 100;
+			width: 32px;
+			height: 32px;
+
+			background-color: #ffffff;
+			background-repeat: no-repeat;
+			background-position: center;
+			
+			border: solid 1px rgba(0,0,0, 0.2);
+
+			transition: 0.3s;
+		}
+		
+		/* button settings for left side */
+		button.desc-button-left {
+			border-top-right-radius: 4px;
+			border-bottom-right-radius: 4px;
+			border-left: double 1px rgba(0,0,0, 0.2);
+		}
+
+		/* button settings for top side */
+		button.desc-button-top {
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			border-bottom: double 1px rgba(0,0,0, 0.2);
+		}
+
+		/* button settings for right side */
+		button.desc-button-right {
+			border-top-left-radius: 4px;
+			border-bottom-left-radius: 4px;
+			border-right: double 1px rgba(0,0,0, 0.2);
+		}
+		
+		/* button settings for bottom side */
+		button.desc-button-bottom {
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			border-top: double 1px rgba(0,0,0, 0.2);
+		}
+		
+		button.desc-button-left-open {
+			background-image: url('./icons/desc_open_state_left.png');
+		}
+
+		button.desc-button-left-close {
+			background-image: url('./icons/desc_close_state_left.png');
+		}
+
+		button.desc-button-right-open {
+			background-image: url('./icons/desc_open_state_right.png');
+		}
+
+		button.desc-button-right-close {
+			background-image: url('./icons/desc_close_state_right.png');
+		}
+		
+		button.desc-button-top-open {
+			background-image: url('./icons/desc_open_state_top.png');
+		}
+
+		button.desc-button-top-close {
+			background-image: url('./icons/desc_close_state_top.png');
+		}
+		
+		button.desc-button-bottom-open {
+			background-image: url('./icons/desc_open_state_bottom.png');
+		}
+
+		button.desc-button-bottom-close {
+			background-image: url('./icons/desc_close_state_bottom.png');
+		}
+		
+/*******************************************************************************
+** Styling options for map legend panel & button
+*******************************************************************************/
+		
+		/* Common menu description panel settings */
+		.legend-panel {
+			position: absolute;
+			z-index: 1; /* Stay on top */
+
+			/*
+			   NOTE: width/height attributes can be tuned to change dimensions of the legend
+			   panel. The aspect ratio of the legend image is honored. So, only one of width/height
+			   attribute value specified here is used. If image aspect ratio is greater than 1, then
+			   width attribute value is used, else height attribute value is used
+			*/
+			width: 35%;
+			height: 35%;
+			
+			top: 60%;
+			padding-top: 10px; /* Place content 10px from the top */
+			border-style: solid ;
+			
+			background-color: #c0c0c0;
+			overflow-x: hidden; /* Disable horizontal scroll */
+			transition: 0.1s; /* 0.1 second transition effect to slide in the desc-panel */
+			
+			border-width: 1px;
+			border-color: #808080;
+		}
+		
+		.legend-panel img {
+			position: absolute;
+			max-width:100%;
+			max-height:100%;
+			top: 50%;
+			left: 50%;
+			margin-right: -50%;
+			transform: translate(-50%, -50%);
+		}
+		
+		/* Common settings for legend button to show-hide navigation bar */
+		button.legend-button {
+			position: absolute;
+			z-index: 110;
+			
+			top: 80%;
+			width: 32px;
+			height: 32px;
+			
+			background-color: #ffffff;
+			background-repeat: no-repeat;
+			background-position: center;
+			
+			border: solid 1px rgba(0,0,0, 0.2);
+
+			transition: 0.1s;
+		}
+		
+		/* legend settings for left side */
+		button.legend-button-left {
+			border-top-right-radius: 4px;
+			border-bottom-right-radius: 4px;
+			border-left: double 1px rgba(0,0,0, 0.2);
+		}
+
+		/* button settings for right side */
+		button.legend-button-right {
+			border-top-left-radius: 4px;
+			border-bottom-left-radius: 4px;
+			border-right: double 1px rgba(0,0,0, 0.2);
+		}
+		
+		button.legend-button-right-open {
+			background-image: url('./icons/legend_open_state_right.png');
+		}
+		
+		button.legend-button-right-close {
+			background-image: url('./icons/legend_close_state_right.png');
+		}
+
+		button.legend-button-left-open {
+			background-image: url('./icons/legend_open_state_left.png');
+		}
+		
+		button.legend-button-left-close {
+			background-image: url('./icons/legend_close_state_left.png');
+		}
+
+		
